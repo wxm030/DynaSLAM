@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/Examples/RGB-D/rgbd_tum",
+            // "args": [
+            //     "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/Vocabulary/ORBvoc.txt",
+            //     "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/Examples/RGB-D/TUM1.yaml",
+            //     "/home/wxm/Documents/code/DynamicRescon/datasets/rgbd_dataset_freiburg1_xyz",
+            //     "/home/wxm/Documents/code/DynamicRescon/datasets/associates.txt",
+            //     "/home/wxm/Documents/code/DynamicRescon/datasets/outlogs/masks",
+            //     "/home/wxm/Documents/code/DynamicRescon/datasets/outlogs/output"
+            // ],
+            "args": [
+                "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/Vocabulary/ORBvoc.txt",
+                "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/Examples/RGB-D/TUM3.yaml",
+                "/home/wxm/Documents/code/DynamicRescon/datasets/rgbd_dataset_freiburg3_walking_xyz",
+                "/home/wxm/Documents/code/DynamicRescon/datasets/rgbd_dataset_freiburg3_walking_xyz/associate.txt",
+                "/home/wxm/Documents/code/DynamicRescon/datasets/outlogs/masks",
+                "/home/wxm/Documents/code/DynamicRescon/datasets/outlogs/output"
+            ],
+            "stopAtEntry": false,
+            "cwd": "/home/wxm/Documents/code/DynamicRescon/DynaSLAM",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

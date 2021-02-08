@@ -3,7 +3,7 @@ project(DynaSLAM)
 
 IF(NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE Release)
-  # SET(CMAKE_BUILD_TYPE Debug)
+  #SET(CMAKE_BUILD_TYPE Debug)
 ENDIF()
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
@@ -33,13 +33,15 @@ endif()
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
 message("PROJECT_SOURCE_DIR: " ${OpenCV_DIR})
+set(OpenCV_DIR /home/wxm/Documents/code/Libs_download/opencv-2.4.11/build)
 find_package(OpenCV 2.4.11 QUIET)
 if(NOT OpenCV_FOUND)
     message("OpenCV > 2.4.11 not found.")
-    find_package(OpenCV 3.0 QUIET)
-    if(NOT OpenCV_FOUND)
-        message(FATAL_ERROR "OpenCV > 3.0 not found.")
-    endif()
+    # find_package(OpenCV 3.0 QUIET)
+    # if(NOT OpenCV_FOUND)
+    #     message(FATAL_ERROR "OpenCV > 3.0 not found.")
+    # endif()
+
 endif()
 
 #find_package(OpenCV 3.0 QUIET)
@@ -55,13 +57,14 @@ find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5OpenGL REQUIRED)
 find_package(Qt5Test REQUIRED)
 
-find_package(PythonLibs REQUIRED)
-if (NOT PythonLibs_FOUND)
-    message(FATAL_ERROR "PYTHON LIBS not found.")
-else()
-    message("PYTHON LIBS were found!")
-    message("PYTHON LIBS DIRECTORY: " ${PYTHON_LIBRARY})
-endif()
+SET(PYTHON_LIBRARY "/usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so")
+# find_package(PythonLibs 2.7 EXACT REQUIRED)
+# if (NOT PythonLibs_FOUND)
+#     message(FATAL_ERROR "PYTHON LIBS not found.")
+# else()
+#     message("PYTHON LIBS were found!")
+#     message("PYTHON LIBS DIRECTORY: " ${PYTHON_LIBRARY})
+# endif()
 
 find_package(Boost REQUIRED COMPONENTS thread)
 if(Boost_FOUND)
@@ -147,7 +150,7 @@ add_executable(mono_kitti
 Examples/Monocular/mono_kitti.cc)
 target_link_libraries(mono_kitti ${PROJECT_NAME})
 
-add_executable(mono_carla
-Examples/Monocular/mono_carla.cc)
-target_link_libraries(mono_carla ${PROJECT_NAME})
+#add_executable(mono_carla
+#Examples/Monocular/mono_carla.cc)
+#target_link_libraries(mono_carla ${PROJECT_NAME})
 

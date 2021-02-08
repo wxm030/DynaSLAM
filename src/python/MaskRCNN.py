@@ -19,7 +19,7 @@ class Mask:
         print 'Initializing Mask RCNN network...'
 	# Root directory of the project
 	ROOT_DIR = os.getcwd()
-	ROOT_DIR = "./src/python"
+	ROOT_DIR = "/home/wxm/Documents/code/DynamicRescon/DynaSLAM/src/python/"
 	print(ROOT_DIR)
 
 	# Directory to save logs and trained model
